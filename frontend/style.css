@@ -1,0 +1,202 @@
+/* =====================================================
+   AYUSH–ICD-11 PoC
+   Premium Professional Clinical UI
+   ===================================================== */
+
+/* ---------- RESET ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- ROOT / COLOR PALETTE ---------- */
+:root {
+  --primary: #0f766e;
+  --primary-dark: #115e59;
+  --secondary: #6b7280;
+  --border: #e5e7eb;
+  --bg: #f9fafb;
+  --card: #ffffff;
+  --text: #0f172a;
+}
+
+/* ---------- BASE ---------- */
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.45;
+}
+
+/* ---------- CENTER ---------- */
+.center {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  width: 390px;
+  background: var(--card);
+  padding: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow:
+    0 20px 40px rgba(15, 23, 42, 0.08),
+    0 8px 16px rgba(15, 23, 42, 0.04);
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+/* ---------- INPUT ---------- */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.2);
+}
+
+/* ---------- BUTTON ---------- */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: var(--card);
+  padding: 18px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+header button {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+/* ---------- MAIN CONTAINER ---------- */
+.container {
+  max-width: 980px;
+  margin: 36px auto;
+  background: var(--card);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+/* ---------- SECTION HEADINGS ---------- */
+h4 {
+  margin: 28px 0 14px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   🔥 DISEASE SEARCH LIST (FIXED & SELECTABLE)
+   ===================================================== */
+
+#disease-results {
+  list-style: none;
+  margin-top: 12px;
+  padding: 0;
+}
+
+/* base disease item */
+#disease-results .disease-item {
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* hover */
+#disease-results .disease-item:hover {
+  background-color: #f0fdfa;
+  border-color: var(--primary);
+}
+
+/* ✅ selected state */
+#disease-results .disease-item.selected {
+  background-color: #d1fae5;
+  border-color: #047857;
+  font-weight: 600;
+}
+
+/* =====================================================
+   CODE PREVIEW
+   ===================================================== */
+
+#code-preview li {
+  padding: 10px 12px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background-color: #f9fafb;
+  font-size: 14px;
+}
+
+/* ---------- JSON OUTPUT ---------- */
+pre {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+  max-height: 440px;
+  overflow-y: auto;
+  font-size: 12px;
+}
+
+/* ---------- TOAST ---------- */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}

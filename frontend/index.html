@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign In | AYUSH–ICD-11 PoC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="center">
+
+  <div class="card">
+    <h2>AYUSH–ICD-11 PoC</h2>
+
+    <input
+      type="text"
+      id="si-user"
+      placeholder="Username"
+      autocomplete="off"
+    />
+
+    <!-- Password with Eye Toggle -->
+    <div class="password-wrapper">
+      <input
+        type="password"
+        id="si-pass"
+        placeholder="Password"
+      />
+      <span class="toggle-eye" onclick="togglePassword('si-pass', this)">
+        👁
+      </span>
+    </div>
+
+    <button onclick="signin()">
+      Sign In
+    </button>
+
+    <p>
+      New user?
+      <a href="signup.html">Create an account</a>
+    </p>
+  </div>
+
+  <!-- Auth Logic -->
+  <script src="auth.js"></script>
+
+</body>
+</html>

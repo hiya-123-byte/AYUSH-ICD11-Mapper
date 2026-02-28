@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard | AYUSH–ICD-11 PoC</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="checkAuth()">
+
+  <!-- HEADER -->
+  <header>
+    <h3>AYUSH–ICD-11 Clinical Reporting System</h3>
+    <button onclick="logout()">Logout</button>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- PATIENT SECTION -->
+    <h4>Patient Details</h4>
+
+    <input
+      type="text"
+      id="patient-name"
+      placeholder="Patient Name"
+    />
+
+    <input
+      type="text"
+      id="patient-gender"
+      placeholder="Gender"
+    />
+
+    <input
+      type="date"
+      id="patient-dob"
+    />
+
+    <button id="create-patient-btn">
+      Create Patient
+    </button>
+
+    <!-- DISEASE SEARCH -->
+    <h4>Disease Search (NAMASTE)</h4>
+
+    <input
+      type="text"
+      id="disease-query"
+      placeholder="Search disease (e.g. fever, cough)"
+    />
+
+    <button id="search-disease-btn">
+      Search
+    </button>
+
+    <ul id="disease-results">
+      <!-- results will come here -->
+    </ul>
+
+    <!-- CODE PREVIEW -->
+    <h4>Selected Coding</h4>
+
+    <ul id="code-preview">
+      <li>AYUSH (NAMASTE): —</li>
+      <li>ICD-11 TM2: —</li>
+      <li>ICD-11 Biomedical: —</li>
+    </ul>
+
+    <!-- REPORT -->
+    <h4>Clinical Report</h4>
+
+    <button id="generate-report-btn">
+      Generate FHIR Report
+    </button>
+
+    <pre id="report-output">
+FHIR Bundle JSON will appear here…
+    </pre>
+
+  </div>
+
+  <!-- AUTH LOGIC -->
+  <script src="auth.js"></script>
+
+  <!-- BACKEND LOGIC (next step) -->
+  <script src="app.js"></script>
+
+</body>
+</html>
